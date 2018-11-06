@@ -1,0 +1,20 @@
+#Step 1: Wait screen awaiting key press
+
+	Code awaiting any keyboard input
+#Step 2: Network screen awaiting lever pull
+
+	Code checking for tilt sensor trigger 	every X seconds
+#Step 3: Corruption screen awaiting 'Judas' pull
+
+	Timer and SamplePlayer for effects
+	Particle systems and screenshake?
+	Transparency changing "Judas" text
+	Warning text solid
+#Step 4: Ask for admin password
+
+	Text box and same general motif as steps 1 	and 2
+#Step 5: Display room code, await door password
+
+	Text box and picture of map, same motif as 	1, 2, and 5
+#Step 6: Flicker to fake command line, await command input
+	Simplified command-prompt screen

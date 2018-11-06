@@ -1,0 +1,11 @@
+#Step 1: Wait screen awaiting key press
+
+#Step 2: Network screen awaiting lever pull
+
+#Step 3: Corruption screen awaiting 'Judas' pull
+
+#Step 4: Ask for admin password
+
+#Step 5: Display room code, await door password
+#Step 6: Flicker to fake command line, await command input
+#Step 6: Reduce visuals to fake command prompt
