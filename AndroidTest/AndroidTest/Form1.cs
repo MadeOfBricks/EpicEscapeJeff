@@ -24,23 +24,25 @@ namespace AndroidTest
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            serialPort1.Open();//Opening the serial port
+            serialPort3.Open();//Opening the serial port
             this.myDelegate = new AddDataDelegate(AddDataMethod);//Assigning "the function that changes richtextbox text" to the delegate
             this.myDelegate_button = new AddDataDelegate_button(AddDataMethod_button);//Assigning "the function that changes button text" to the delegate
-            serialPort1.WriteLine("STATE");
+            serialPort3.WriteLine("STATE");
 
         }
         public void AddDataMethod_button(String myString)
         {
             button1.Text = myString;//changes button text
         }
+        
         public void AddDataMethod(String myString)
         {
             richTextBox1.Text = myString + Environment.NewLine;//changes richtextbox text
         }
+         
         private void serialPort1_DataReceived(object sender, System.IO.Ports.SerialDataReceivedEventArgs e)
         {
-            string s = serialPort1.ReadExisting();//reads the serialport buffer
+            string s = serialPort3.ReadExisting();//reads the serialport buffer
             if (s.Contains("state="))//checks if it is status
             {
                 s = s.Trim();
@@ -56,23 +58,26 @@ namespace AndroidTest
                     button1.Invoke(this.myDelegate_button, new Object[] { "OFF" });//sets button text to off
                 }
             }
+           
             else
             {
                 richTextBox1.Invoke(this.myDelegate, new Object[] { s });//adds the recieved bytes to the richtextbox
             }
+        
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        
+        private void button1_Click_1(object sender, EventArgs e)
         {
             if (button1.Text.Contains("ON"))
             {
-                serialPort1.WriteLine("OFF");//sends off command when the previous state was on
+                serialPort3.WriteLine("OFF");//sends off command when the previous state was on
                 button1.Text = "OFF";
                 status = false;
             }
             else
             {
-                serialPort1.WriteLine("ON");//sends on command when the previous state was off
+                serialPort3.WriteLine("ON");//sends on command when the previous state was off
                 button1.Text = "ON";
                 status = true;
             }

@@ -1,1 +1,9 @@
 c:\users\wahke\documents\visual studio 2015\Projects\AndroidTest\AndroidTest\bin\Debug\AndroidTest.exe.config
+C:\Users\wahke\documents\visual studio 2015\Projects\AndroidTest\AndroidTest\obj\Debug\AndroidTest.csprojResolveAssemblyReference.cache
+C:\Users\wahke\documents\visual studio 2015\Projects\AndroidTest\AndroidTest\obj\Debug\AndroidTest.Form1.resources
+C:\Users\wahke\documents\visual studio 2015\Projects\AndroidTest\AndroidTest\obj\Debug\AndroidTest.Properties.Resources.resources
+C:\Users\wahke\documents\visual studio 2015\Projects\AndroidTest\AndroidTest\obj\Debug\AndroidTest.csproj.GenerateResource.Cache
+C:\Users\wahke\documents\visual studio 2015\Projects\AndroidTest\AndroidTest\bin\Debug\AndroidTest.exe
+C:\Users\wahke\documents\visual studio 2015\Projects\AndroidTest\AndroidTest\bin\Debug\AndroidTest.pdb
+C:\Users\wahke\documents\visual studio 2015\Projects\AndroidTest\AndroidTest\obj\Debug\AndroidTest.exe
+C:\Users\wahke\documents\visual studio 2015\Projects\AndroidTest\AndroidTest\obj\Debug\AndroidTest.pdb
