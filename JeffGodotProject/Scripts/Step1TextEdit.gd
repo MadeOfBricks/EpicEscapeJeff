@@ -7,7 +7,7 @@ signal step_complete
 func _ready():
 	grab_focus()
 	
-	var screenSize = get_tree().get_root().get_viewport().size
+	var screenSize = OS.get_real_window_size()#get_tree().get_root().get_viewport().size
 	margin_left = screenSize.x/2 - 100
 	margin_top = screenSize.y * .35
 

@@ -6,10 +6,13 @@
 	Code checking for tilt sensor trigger 	every X seconds
 #Step 3: Corruption screen awaiting 'Judas' pull
 
-	Timer and SamplePlayer for effects
-	Particle systems and screenshake?
-	Transparency changing "Judas" text
-	Warning text solid
+	Screen 'split' effect
+		Looks like elements are being drawn "out of 		place"
+	Black and red flickers in
+	Warning text appears and freezes screen before corruption completes
+	"WARNING: NETWORK COMPROMISED
+	ORIGIN: J-00-D-4S CELL
+	ACCESS KEY: 1234(placeholder)"
 #Step 4: Ask for admin password
 
 	Text box and same general motif as steps 1 	and 2
