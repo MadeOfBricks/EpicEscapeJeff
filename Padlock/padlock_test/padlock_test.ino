@@ -7,6 +7,9 @@
 int left_light;
 int right_light;
 int center_light;
+int left_cal;
+int right_cal;
+int center_cal;
 char code[4];
 
 
@@ -16,11 +19,18 @@ void setup() {
   pinMode(BLUE,OUTPUT);
   pinMode(RED, OUTPUT);
   pinMode(LED,OUTPUT);
-  left_light = analogRead(A0);
-  right_light = analogRead(A1);
-  center_light=analogRead(A2);
   Serial.begin(9600);
 
+}
+
+void print_calibrations(){
+  Serial.write("center: ");
+  Serial.println(center_light);
+  Serial.write("right: ");
+  Serial.println(right_light);
+  Serial.write("left: ");
+  Serial.println(left_light);
+  
 }
 
 bool is_order(char code[4])
@@ -50,7 +60,7 @@ char censor_check()
   if(left_light <150){
     ans='l';
     digitalWrite(GREEN,HIGH);
-    delay(500);
+    delay(250);
     digitalWrite(GREEN,LOW);
   }
   else if(right_light<150){
@@ -63,7 +73,7 @@ char censor_check()
   else if(center_light<150){
     ans='c';
     digitalWrite(RED,HIGH);
-    delay(500);
+    delay(250);
     
   }
   else ans='f';
@@ -71,12 +81,13 @@ char censor_check()
   return ans;
 }
 
-
-void loop() {
-
-  Serial.println(center_light);
-  Serial.println(right_light);
-  Serial.println(left_light);
+void loop() {  
+  
+  left_light = analogRead(A0);
+  right_light = analogRead(A1);
+  center_light=analogRead(A2);
+  print_calibrations();
+  
   for(int i=0;i<4;++i){
     code[i]=censor_check();
     
@@ -85,9 +96,7 @@ void loop() {
     while(code[i]=='f')
     {
       code[i]=censor_check();    
-    }
-    
-    
+    }    
   }
   if(is_order(code)==true){
     digitalWrite(LED,HIGH);
