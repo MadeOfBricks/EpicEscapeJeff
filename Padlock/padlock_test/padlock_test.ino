@@ -4,14 +4,15 @@
 #define BLUE 7
 #define RED 4
 #define LED 3
-int left_light;
-int right_light;
-int center_light;
-int left_cal;
-int right_cal;
-int center_cal;
-char code[4];
+static int left_cal=250;
+static int right_cal=250;
+static int center_cal=250;
 
+int left_light;
+int right_light;  
+int center_light;
+
+char code[4];
 
 
 void setup() {
@@ -19,6 +20,14 @@ void setup() {
   pinMode(BLUE,OUTPUT);
   pinMode(RED, OUTPUT);
   pinMode(LED,OUTPUT);
+  //run once with serial moniter on to find baseline light levels and set these
+  //a little higher so flashlights will set them off
+  //
+
+
+
+  
+
   Serial.begin(9600);
 
 }
@@ -35,9 +44,12 @@ void print_calibrations(){
 
 bool is_order(char code[4])
 {
-  //this is the code you want
+  //Set this to the vaule you want for the combo lock
+  //c=center, r=right l=left, use lowercase
   char ans[4]="rrrr";
+  
   bool ret=false;
+  
   for(int i=0;i<4;i++)
   {
     if(code[i]!=ans[i])
@@ -57,20 +69,20 @@ bool is_order(char code[4])
 char censor_check()
 {
   char ans;
-  if(left_light <150){
+  if(left_light > left_cal){
     ans='l';
     digitalWrite(GREEN,HIGH);
     delay(250);
     digitalWrite(GREEN,LOW);
   }
-  else if(right_light<150){
+  else if(right_light> right_cal){
     ans='r';
     digitalWrite(BLUE,HIGH);
     delay(250);
     
     digitalWrite(BLUE,LOW);
   }
-  else if(center_light<150){
+  else if(center_light>center_cal){
     ans='c';
     digitalWrite(RED,HIGH);
     delay(250);
@@ -86,6 +98,8 @@ void loop() {
   left_light = analogRead(A0);
   right_light = analogRead(A1);
   center_light=analogRead(A2);
+  
+  //this will print the current values for light sensor
   print_calibrations();
   
   for(int i=0;i<4;++i){
