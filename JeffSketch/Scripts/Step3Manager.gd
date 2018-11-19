@@ -22,21 +22,16 @@ func sensor_file_read():
 	var fileString = OS.get_system_dir(OS.SYSTEM_DIR_DOCUMENTS) + "/testFile.txt"
 	readFile.open(fileString,File.READ)
 	var levState = readFile.get_line()
-	print("Lever state: " + levState)
 	
 	#var lBreak = readFile.get_line()
 		
 	var servState = readFile.get_line()
-	print("Server state: " + servState)
 	
 	if servState != "X" && servState != "":
-		print("State was " + servState)
 		emit_signal("server_pulled")
-		#print("server pulled")
 
 
 func _on_Step3FileChecker_timeout():
-	$Step3FileChecker.wait_time = 1
 	sensor_file_read()
 
 func _on_server_pulled():
@@ -73,13 +68,13 @@ func _on_CorruptionSpriteTimer_timeout():
 
 
 func _on_RebootTimer_timeout():
-	print("Reboot timeout")
 	if !corruptionSprites.empty():
 		var thisSprite = corruptionSprites.front()
 		corruptionSprites.pop_front()
 		thisSprite.queue_free()
 	else:
 		visible = false
+		get_parent().get_node("Step4").visible = true
 		$RebootTimer.stop()
 		$CorruptionSpriteTimer.stop()
 		
