@@ -1,9 +1,11 @@
-//For teting light per side
-
-#define GREEN 7
-#define BLUE 10
-#define RED 8
+//light stuff
+//led pins for light sensor
+#define GREEN 10
+#define BLUE 11
+#define RED 12
 #define LED 13
+
+//Calibrations for light sensors
 int left_cal=250;
 int right_cal=250;
 int center_cal=250;
@@ -14,6 +16,18 @@ int center_light;
 
 char code[4];
 
+bool leverPulled = false;
+bool serverPulled = false;
+
+//Distance Sensor Stuff
+// defines pins numbers
+const int trigPin = 6;
+const int echoPin = 7;
+const int tiltPin = 3;
+// defines variables
+long duration;
+int distance;
+
 
 void setup() {
   pinMode(GREEN, OUTPUT);
@@ -23,12 +37,15 @@ void setup() {
   //run once with serial moniter on to find baseline light levels and set these
   //a little higher so flashlights will set them off
   //
+  //Lever
+  //pinMode(ledPin,OUTPUT);//initialize the ledPin as an output
+  pinMode(tiltPin,INPUT);
+  digitalWrite(tiltPin, HIGH);
+  Serial.begin(115200);
 
-
-
-  
-
-  Serial.begin(9600);
+  //Server
+  pinMode(trigPin, OUTPUT); // Sets the trigPin as an Output
+  pinMode(echoPin, INPUT); // Sets the echoPin as an Input
 
 }
 
@@ -94,8 +111,44 @@ char censor_check()
   return ans;
 }
 
-void loop() {  
-  
+bool tilt_sensor()
+{
+  bool ans=false;
+  int digitalVal = digitalRead(tiltPin);
+  if(LOW == digitalVal)
+  {
+    if (!leverPulled){
+      Serial.println("LLLLLLLLLLL");
+      ans = true;  
+    }
+  }
+  return ans;
+}
+
+void echo_sensor()
+{
+   // Clears the trigPin
+  digitalWrite(trigPin, LOW);
+  delayMicroseconds(2);
+  // Sets the trigPin on HIGH state for 10 micro seconds
+  digitalWrite(trigPin, HIGH);
+  delayMicroseconds(10);
+  digitalWrite(trigPin, LOW);
+  // Reads the echoPin, returns the sound wave travel time in microseconds
+  duration = pulseIn(echoPin, HIGH);
+  // Calculating the distance
+  distance= duration*0.034/2;
+  // Prints the result on the serial monitor
+  if (distance > 10){
+    if (!serverPulled && leverPulled){
+      Serial.println("SSSSSSSSSSS");
+      serverPulled = true;
+    }
+  }
+}
+
+void light_sensor()
+{
   left_light = analogRead(A0);
   right_light = analogRead(A2);
   center_light=analogRead(A1);
@@ -103,7 +156,8 @@ void loop() {
   //this will print the current values for light sensor
   print_calibrations();
   
-  for(int i=0;i<4;++i){
+  for(int i=0;i<4;++i)
+  {
     code[i]=censor_check();
     delay(1500);
     /*
@@ -113,9 +167,50 @@ void loop() {
     }
     */    
   }
-  if(is_order(code)==true){
+  if(is_order(code)==true)
+  {
     digitalWrite(LED,HIGH);
     Serial.write("Code is true");
   }
+ }
+
+
+
+void loop() {  
+  
+  while(leverPulled==false){
+    leverPulled=tilt_sensor();
+  }
+  //if(leverPulled==true)
+  //{
+    //Serial.write("hello");
+    //echo_sensor();
+
+      // Clears the trigPin
+  digitalWrite(trigPin, LOW);
+  delayMicroseconds(2);
+  // Sets the trigPin on HIGH state for 10 micro seconds
+  digitalWrite(trigPin, HIGH);
+  delayMicroseconds(10);
+  digitalWrite(trigPin, LOW);
+  // Reads the echoPin, returns the sound wave travel time in microseconds
+  duration = pulseIn(echoPin, HIGH);
+  // Calculating the distance
+  distance= duration*0.034/2;
+  Serial.println(distance);
+  // Prints the result on the serial monitor
+  if (distance > 10){
+    
+    if (!serverPulled && leverPulled){
+      Serial.println("SSSSSSSSSSS");
+      serverPulled = true;
+    }
+  }
+  //}
+  if(serverPulled==true && leverPulled==true)
+  {    
+    light_sensor(); 
+  }
+
 }
   
