@@ -16,6 +16,8 @@ namespace AndroidTest
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+            string fileString = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "/testFile.txt";
+            System.IO.File.WriteAllText(fileString, "X\r\nX");
             Application.Run(new Form1());
         }
     }
