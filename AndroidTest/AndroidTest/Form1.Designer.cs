@@ -1,7 +1,9 @@
 ﻿using System;
-
 namespace AndroidTest
 {
+
+
+
     partial class Form1
     {
         /// <summary>
@@ -32,7 +34,6 @@ namespace AndroidTest
         {
             this.components = new System.ComponentModel.Container();
             this.serialPort3 = new System.IO.Ports.SerialPort(this.components);
-            this.serialPort4 = new System.IO.Ports.SerialPort(this.components);
             this.button1 = new System.Windows.Forms.Button();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.SuspendLayout();
@@ -40,18 +41,16 @@ namespace AndroidTest
             // serialPort3
             // 
             this.serialPort3.BaudRate = 115200;
-           /* if (isWindows())
+            string os = System.Environment.OSVersion.Version.ToString();
+            Console.Write(os);
+            this.serialPort3.PortName = "COM3";
+            /*if (os.Contains("win"))
             {
-                //- Windows
-                serialPort3.PortName = "COM3";
+                this.serialPort3.PortName = "COM3";
             }
             else
-            {
-                //- Linux
-                serialPort3.PortName = "/dev/ttyS2";
-            }*/
-            serialPort3.PortName = "/dev/ttyS2";
-            //this.serialPort3.PortName = "COM3"; 
+                this.serialPort3.PortName = "ttys2";*/
+            
             this.serialPort3.DataReceived += new System.IO.Ports.SerialDataReceivedEventHandler(this.serialPort1_DataReceived);
             // 
             // button1
@@ -89,7 +88,6 @@ namespace AndroidTest
         #endregion
 
         private System.IO.Ports.SerialPort serialPort3;
-        private System.IO.Ports.SerialPort serialPort4;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.RichTextBox richTextBox1;
         private readonly EventHandler richTextBox1_TextChanged;

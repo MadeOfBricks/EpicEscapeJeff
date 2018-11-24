@@ -24,17 +24,18 @@ namespace AndroidTest
         private void Form1_Load(object sender, EventArgs e)
         {
             string fileString = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "/testFile.txt";
-            System.IO.File.Create(fileString);
+            //System.IO.File.Create(fileString);
             System.IO.File.WriteAllText(fileString, "X\r\nX");
-            serialPort4.Open();
             serialPort3.Open();//Opening the serial port
             this.myDelegate = new AddDataDelegate(AddDataMethod);//Assigning "the function that changes richtextbox text" to the delegate
             this.myDelegate_button = new AddDataDelegate_button(AddDataMethod_button);//Assigning "the function that changes button text" to the delegate
-            
+
+
            
 
-         
-            
+
+
+
 
         }
         public void AddDataMethod_button(String myString)
