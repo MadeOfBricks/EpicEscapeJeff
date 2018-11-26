@@ -41,16 +41,7 @@ namespace AndroidTest
             // serialPort3
             // 
             this.serialPort3.BaudRate = 115200;
-            string os = System.Environment.OSVersion.Version.ToString();
-            Console.Write(os);
             this.serialPort3.PortName = "COM3";
-            /*if (os.Contains("win"))
-            {
-                this.serialPort3.PortName = "COM3";
-            }
-            else
-                this.serialPort3.PortName = "ttys2";*/
-            
             this.serialPort3.DataReceived += new System.IO.Ports.SerialDataReceivedEventHandler(this.serialPort1_DataReceived);
             // 
             // button1

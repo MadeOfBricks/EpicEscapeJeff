@@ -6,6 +6,7 @@ var puzzleStep = 1
 onready var screenSize = get_tree().get_root().get_viewport().size
 
 func _ready():
+	print(121212)
 	OS.window_fullscreen = true
 	var file = File.new()
 	var fileString = OS.get_system_dir(OS.SYSTEM_DIR_DOCUMENTS) + "/testFile.txt"

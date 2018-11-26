@@ -77,5 +77,6 @@ func _on_RebootTimer_timeout():
 		get_parent().get_node("Step4").visible = true
 		$RebootTimer.stop()
 		$CorruptionSpriteTimer.stop()
+		queue_free()
 		
 		
