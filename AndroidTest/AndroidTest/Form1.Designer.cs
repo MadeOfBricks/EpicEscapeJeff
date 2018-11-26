@@ -49,7 +49,7 @@ namespace AndroidTest
                 this.serialPort3.PortName = "COM3";
             }
             else
-                this.serialPort3.PortName = "ttys2";
+                this.serialPort3.PortName = "/dev/ttys2";
             
             this.serialPort3.DataReceived += new System.IO.Ports.SerialDataReceivedEventHandler(this.serialPort1_DataReceived);
             // 
