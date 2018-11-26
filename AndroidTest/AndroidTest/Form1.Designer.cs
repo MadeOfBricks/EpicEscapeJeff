@@ -41,7 +41,16 @@ namespace AndroidTest
             // serialPort3
             // 
             this.serialPort3.BaudRate = 115200;
-            this.serialPort3.PortName = "COM3";
+            string os = System.Environment.OSVersion.VersionString;
+            Console.Write(os);
+            //this.serialPort3.PortName = "COM3";
+            if (os.Contains("Windows"))
+            {
+                this.serialPort3.PortName = "COM3";
+            }
+            else
+                this.serialPort3.PortName = "ttys2";
+            
             this.serialPort3.DataReceived += new System.IO.Ports.SerialDataReceivedEventHandler(this.serialPort1_DataReceived);
             // 
             // button1
@@ -50,6 +59,7 @@ namespace AndroidTest
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(122, 53);
             this.button1.TabIndex = 0;
+            
             this.button1.Text = "ResetFile";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click_1);
