@@ -7,7 +7,10 @@ path="res://.import/JudasParticle1.png-5732a253b6f059d0e354730e58c0379f.stex"
 [deps]
 
 source_file="res://Assets/Particles/JudasParticle1.png"
+source_md5="6478b36654b31cac358deeb2e9387054"
+
 dest_files=[ "res://.import/JudasParticle1.png-5732a253b6f059d0e354730e58c0379f.stex" ]
+dest_md5="7bc0feb13b77adda27a8f028679265e2"
 
 [params]
 

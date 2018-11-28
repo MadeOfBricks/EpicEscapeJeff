@@ -507,6 +507,7 @@ autostart = false
 
 [node name="Step4" type="Node2D" parent="." index="3"]
 
+visible = false
 script = ExtResource( 17 )
 
 [node name="GreenBackground" type="AnimatedSprite" parent="Step4" index="0"]

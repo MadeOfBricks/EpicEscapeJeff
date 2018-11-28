@@ -7,7 +7,10 @@ path="res://.import/JudasLol.png-06ffb0887da7325ec6335e8bb32eb575.stex"
 [deps]
 
 source_file="res://Assets/JudasLol.png"
+source_md5="fd4e475bfa5a2efb36c274261c4f617c"
+
 dest_files=[ "res://.import/JudasLol.png-06ffb0887da7325ec6335e8bb32eb575.stex" ]
+dest_md5="eeda5fe490c295101a518b7216d1482c"
 
 [params]
 

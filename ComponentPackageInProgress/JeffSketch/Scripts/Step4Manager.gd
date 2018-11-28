@@ -30,6 +30,7 @@ func _unhandled_input(event):
 				emit_signal("correct_password")
 			else:
 				$NotificationLabel.text = "Incorrect password"
+				$PassWordHint.text = "Password hint: Best friend."
 				$LoginBoxAPlayer/LoginBox/TextEdit.text = ""
 
 func _on_correct_password():

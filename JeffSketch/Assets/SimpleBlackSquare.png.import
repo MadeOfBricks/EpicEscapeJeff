@@ -7,7 +7,10 @@ path="res://.import/SimpleBlackSquare.png-6fa0de728a77f23a13ae2ee4647943eb.stex"
 [deps]
 
 source_file="res://Assets/SimpleBlackSquare.png"
+source_md5="9ad23c36ab661da6ecea11488225d7d3"
+
 dest_files=[ "res://.import/SimpleBlackSquare.png-6fa0de728a77f23a13ae2ee4647943eb.stex" ]
+dest_md5="b5e8042044cd1beaf240aa6fb12ab51a"
 
 [params]
 
