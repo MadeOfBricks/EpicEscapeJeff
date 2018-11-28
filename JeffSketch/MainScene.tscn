@@ -507,8 +507,6 @@ autostart = false
 
 [node name="Step4" type="Node2D" parent="." index="3"]
 
-editor/display_folded = true
-visible = false
 script = ExtResource( 17 )
 
 [node name="GreenBackground" type="AnimatedSprite" parent="Step4" index="0"]
@@ -590,10 +588,10 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 479.277
-margin_top = 406.881
-margin_right = 838.277
-margin_bottom = 504.881
+margin_left = 479.0
+margin_top = 406.0
+margin_right = 837.0
+margin_bottom = 504.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 2
@@ -606,7 +604,29 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "Margin", "Visibility", "custom_fonts" ]
 
-[node name="LoginBoxAPlayer" type="AnimationPlayer" parent="Step4" index="4"]
+[node name="PassWordHint" type="Label" parent="Step4" index="4"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 49.0
+margin_top = 416.0
+margin_right = 407.0
+margin_bottom = 519.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 18 )
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Margin", "Visibility", "custom_fonts" ]
+
+[node name="LoginBoxAPlayer" type="AnimationPlayer" parent="Step4" index="5"]
 
 root_node = NodePath("..")
 autoplay = ""
@@ -686,6 +706,7 @@ _sections_unfolded = [ "Caret", "Margin", "Theme", "custom_fonts" ]
 
 [node name="Step5" type="Node2D" parent="." index="4"]
 
+editor/display_folded = true
 visible = false
 script = ExtResource( 21 )
 
