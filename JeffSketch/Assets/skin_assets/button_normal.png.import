@@ -7,10 +7,7 @@ path="res://.import/button_normal.png-7ceacf3d6625a4e76f581d0ae1258671.stex"
 [deps]
 
 source_file="res://Assets/skin_assets/button_normal.png"
-source_md5="cf208a246ebfe91019ec76bf4b89a051"
-
 dest_files=[ "res://.import/button_normal.png-7ceacf3d6625a4e76f581d0ae1258671.stex" ]
-dest_md5="89bdc2a1dfc340328f1c684fee2e4919"
 
 [params]
 
