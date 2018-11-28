@@ -7,10 +7,7 @@ path="res://.import/button_pressed.png-501e49eae0845aa00c0264094791a5b9.stex"
 [deps]
 
 source_file="res://Assets/skin_assets/button_pressed.png"
-source_md5="3e6cf01ecc1792c4caa9d8490c94db8a"
-
 dest_files=[ "res://.import/button_pressed.png-501e49eae0845aa00c0264094791a5b9.stex" ]
-dest_md5="9a1a5822a2742edf780a7bd0508c40bc"
 
 [params]
 

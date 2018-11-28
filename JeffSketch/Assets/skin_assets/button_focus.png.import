@@ -7,10 +7,7 @@ path="res://.import/button_focus.png-e1981e994155ca422d4d953f4af77164.stex"
 [deps]
 
 source_file="res://Assets/skin_assets/button_focus.png"
-source_md5="f0631945fc4f002ab0ca23e74915bf0e"
-
 dest_files=[ "res://.import/button_focus.png-e1981e994155ca422d4d953f4af77164.stex" ]
-dest_md5="9e49e3c9f9d0be420b111a7b588fa807"
 
 [params]
 
