@@ -144,7 +144,7 @@ bool echo_sensor()
   distance= duration*0.034/2;
   
   // Prints the result on the serial monitor
-  Serial.println(distance);
+  // Serial.println(distance);
   
   if (distance > 10 && distance <500){
     if (!serverPulled && leverPulled){
