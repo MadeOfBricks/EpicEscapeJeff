@@ -32,9 +32,12 @@ func _on_VerifyTimer_timeout():
 
 
 func _on_CorruptionTimer_timeout():
-	if $CorruptionTimer.wait_time == 2:
+	var waitTime = $CorruptionTimer.wait_time
+	if waitTime == 2:
 		$CorruptionTimer.wait_time = 1
+	elif waitTime > .16:
+		$CorruptionTimer.wait_time = waitTime/2
 	
 	
 	var randChars = ""
-	$NotificationLabel.text = $NotificationLabel.texttext + randChars
+	$NotificationLabel.text = $NotificationLabel.text + randChars

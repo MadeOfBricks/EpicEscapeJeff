@@ -1,0 +1,34 @@
+#Step 1: Wait screen awaiting key press
+
+	Blank flickering cursor
+	Text "Awaiting input . . ."
+#Step 2: Network screen awaiting lever pull
+
+	"Manual network override required"
+#Step 3: Corruption screen awaiting 'Judas' pull
+
+	2 seconds of "connecting . . ."
+	1 second of "WARNINGWARNINGWARN"
+		with noise
+	1 second of shifting and reset
+		with noise
+	Red "D E N Y" text
+	"Judas Alert. Warning code 12345"
+	12345 is code for lock
+	When Judas is pulled, flicker to black, 
+	then turn back on
+		with noise
+#Step 4: Ask for admin password
+
+	"Admin credentials required"
+	"Password"
+		Text box below for password
+#Step 5: Display room code, await door password
+
+	"Door security code required for sector 
+	". . ."
+	"15"
+#Step 6: Flicker to fake command line, await command input
+	"J purge command required"
+	"/:" 
+	Await input of "jos run j-purge"
