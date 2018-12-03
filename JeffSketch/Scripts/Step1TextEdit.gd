@@ -13,9 +13,10 @@ func _ready():
 
 
 func _unhandled_input(event):
-	if event is InputEventKey:
-		queue_free()
-		emit_signal("step_complete")
+	if get_parent().visible:
+		if event is InputEventKey:
+			queue_free()
+			emit_signal("step_complete")
 
 
 

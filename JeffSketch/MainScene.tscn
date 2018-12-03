@@ -1,10 +1,10 @@
-[gd_scene load_steps=33 format=2]
+[gd_scene load_steps=35 format=2]
 
 [ext_resource path="res://Scripts/Root.gd" type="Script" id=1]
 [ext_resource path="res://Scripts/Step1Manager.gd" type="Script" id=2]
 [ext_resource path="res://Assets/SimpleBlackSquare.png" type="Texture" id=3]
 [ext_resource path="res://Scripts/Step1BG.gd" type="Script" id=4]
-[ext_resource path="res://Assets/Fonts/ConsoleFont1.tres" type="DynamicFont" id=5]
+[ext_resource path="res://Assets/Step1CommandLineEsque.tres" type="Theme" id=5]
 [ext_resource path="res://Scripts/Step1TextEdit.gd" type="Script" id=6]
 [ext_resource path="res://Scripts/Step2Manager.gd" type="Script" id=7]
 [ext_resource path="res://Assets/SimpleGreenSquare.png" type="Texture" id=8]
@@ -22,6 +22,9 @@
 [ext_resource path="res://Scripts/Step4TextEdit.gd" type="Script" id=20]
 [ext_resource path="res://Scripts/Step5Manager.gd" type="Script" id=21]
 [ext_resource path="res://Scripts/Step5TextEdit.gd" type="Script" id=22]
+[ext_resource path="res://Scripts/Step5OverlayBlackBackground.gd" type="Script" id=23]
+[ext_resource path="res://Scripts/Step6Manager.gd" type="Script" id=24]
+[ext_resource path="res://Scripts/Step6TextEdit.gd" type="Script" id=25]
 
 [sub_resource type="Animation" id=1]
 
@@ -41,63 +44,6 @@ tracks/0/keys = {
 "update": 0,
 "values": [ Color( 1, 1, 1, 1 ), Color( 0, 0, 0, 0 ) ]
 }
-
-[sub_resource type="StyleBoxTexture" id=2]
-
-content_margin_left = -1.0
-content_margin_right = -1.0
-content_margin_top = -1.0
-content_margin_bottom = -1.0
-texture = ExtResource( 3 )
-normal_map = ExtResource( 3 )
-region_rect = Rect2( 0, 0, 16, 16 )
-margin_left = 0.0
-margin_right = 0.0
-margin_top = 0.0
-margin_bottom = 0.0
-expand_margin_left = 0.0
-expand_margin_right = 0.0
-expand_margin_top = 0.0
-expand_margin_bottom = 0.0
-modulate_color = Color( 1, 1, 1, 1 )
-draw_center = true
-
-[sub_resource type="Theme" id=3]
-
-default_font = ExtResource( 5 )
-TextEdit/colors/background_color = Color( 0, 0, 0, 0 )
-TextEdit/colors/brace_mismatch_color = Color( 1, 0.2, 0.2, 1 )
-TextEdit/colors/breakpoint_color = Color( 0.8, 0.8, 0.4, 0.2 )
-TextEdit/colors/caret_background_color = Color( 1, 1, 1, 1 )
-TextEdit/colors/caret_color = Color( 0.878431, 0.878431, 0.878431, 1 )
-TextEdit/colors/code_folding_color = Color( 0.8, 0.8, 0.8, 0.8 )
-TextEdit/colors/completion_background_color = Color( 0, 0, 0, 1 )
-TextEdit/colors/completion_existing_color = Color( 0.87451, 0.87451, 0.87451, 0.129412 )
-TextEdit/colors/completion_font_color = Color( 0.666667, 0.666667, 0.666667, 1 )
-TextEdit/colors/completion_scroll_color = Color( 1, 1, 1, 1 )
-TextEdit/colors/completion_selected_color = Color( 0.262745, 0.258824, 0.266667, 1 )
-TextEdit/colors/current_line_color = Color( 0.25, 0.25, 0.26, 0.8 )
-TextEdit/colors/font_color = Color( 1, 1, 1, 1 )
-TextEdit/colors/font_color_selected = Color( 1, 1, 1, 1 )
-TextEdit/colors/function_color = Color( 0.4, 0.635294, 0.807843, 1 )
-TextEdit/colors/line_number_color = Color( 0.666667, 0.666667, 0.666667, 0.4 )
-TextEdit/colors/mark_color = Color( 1, 0.4, 0.4, 0.4 )
-TextEdit/colors/member_variable_color = Color( 0.901961, 0.305882, 0.34902, 1 )
-TextEdit/colors/number_color = Color( 0.921569, 0.584314, 0.196078, 1 )
-TextEdit/colors/selection_color = Color( 0, 0, 0, 1 )
-TextEdit/colors/symbol_color = Color( 0.941176, 0.941176, 0.941176, 1 )
-TextEdit/colors/word_highlighted_color = Color( 0.8, 0.9, 0.9, 0.15 )
-TextEdit/constants/completion_lines = 7
-TextEdit/constants/completion_max_width = 50
-TextEdit/constants/completion_scroll_width = 3
-TextEdit/constants/line_spacing = 4
-TextEdit/fonts/font = null
-TextEdit/icons/tab = null
-TextEdit/styles/completion = null
-TextEdit/styles/focus = null
-TextEdit/styles/normal = SubResource( 2 )
-TextEdit/styles/read_only = null
-_sections_unfolded = [ "TextEdit", "TextEdit/colors", "TextEdit/fonts", "TextEdit/styles" ]
 
 [sub_resource type="SpriteFrames" id=4]
 
@@ -256,13 +202,32 @@ tracks/1/keys = {
 "values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
 }
 
+[sub_resource type="Animation" id=11]
+
+resource_name = "Flicker In"
+length = 2.0
+loop = false
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("BlackBackAnim/BlackBack:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 0.6, 0.7, 0.8, 1, 1.1, 1.2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, false, true, false, true, false, true ]
+}
+
 [node name="Root" type="Node" index="0"]
 
 script = ExtResource( 1 )
 
 [node name="Step1" type="Node2D" parent="." index="0"]
 
-editor/display_folded = true
+visible = false
 script = ExtResource( 2 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Step1" index="0"]
@@ -300,7 +265,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-theme = SubResource( 3 )
+theme = ExtResource( 5 )
 text = "Awaiting input 
 "
 readonly = false
@@ -507,6 +472,7 @@ autostart = false
 
 [node name="Step4" type="Node2D" parent="." index="3"]
 
+editor/display_folded = true
 visible = false
 script = ExtResource( 17 )
 
@@ -589,10 +555,10 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 479.0
-margin_top = 406.0
-margin_right = 837.0
-margin_bottom = 504.0
+margin_left = 102.0
+margin_top = 371.0
+margin_right = 460.0
+margin_bottom = 469.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 2
@@ -708,7 +674,6 @@ _sections_unfolded = [ "Caret", "Margin", "Theme", "custom_fonts" ]
 [node name="Step5" type="Node2D" parent="." index="4"]
 
 editor/display_folded = true
-visible = false
 script = ExtResource( 21 )
 
 [node name="Label" type="Label" parent="Step5" index="0"]
@@ -743,8 +708,8 @@ anchor_right = 0.0
 anchor_bottom = 0.0
 margin_left = 324.0
 margin_top = 440.0
-margin_right = 682.0
-margin_bottom = 538.0
+margin_right = 1039.0
+margin_bottom = 745.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 2
@@ -752,6 +717,7 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
 custom_fonts/font = ExtResource( 18 )
+autowrap = true
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
@@ -813,11 +779,84 @@ _sections_unfolded = [ "Visibility", "Z Index" ]
 [node name="CorruptionTimer" type="Timer" parent="Step5" index="4"]
 
 process_mode = 1
-wait_time = 2.0
+wait_time = 1.0
 one_shot = false
 autostart = false
 
+[node name="BlackBackAnim" type="AnimationPlayer" parent="Step5" index="5"]
+
+root_node = NodePath("..")
+autoplay = ""
+playback_process_mode = 1
+playback_default_blend_time = 0.0
+playback_speed = 1.0
+"anims/Flicker In" = SubResource( 11 )
+blend_times = [  ]
+
+[node name="BlackBack" type="Sprite" parent="Step5/BlackBackAnim" index="0"]
+
+visible = false
+z_index = 2
+texture = ExtResource( 3 )
+script = ExtResource( 23 )
+_sections_unfolded = [ "Visibility", "Z Index" ]
+
 [node name="Step6" type="Node2D" parent="." index="5"]
+
+visible = false
+script = ExtResource( 24 )
+
+[node name="AppearTimer" type="Timer" parent="Step6" index="0"]
+
+process_mode = 1
+wait_time = 1.0
+one_shot = true
+autostart = false
+
+[node name="TextEdit" type="TextEdit" parent="Step6" index="1"]
+
+visible = false
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 313.0
+margin_top = 230.0
+margin_right = 665.0
+margin_bottom = 384.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+theme = ExtResource( 5 )
+text = "X:/"
+readonly = false
+highlight_current_line = false
+syntax_highlighting = false
+show_line_numbers = false
+highlight_all_occurrences = false
+override_selected_font_color = false
+context_menu_enabled = false
+smooth_scrolling = false
+v_scroll_speed = 80.0
+hiding_enabled = 0
+wrap_lines = false
+caret_block_mode = true
+caret_blink = true
+caret_blink_speed = 0.65
+caret_moving_by_right_click = true
+script = ExtResource( 25 )
+_sections_unfolded = [ "Caret", "Theme" ]
+
+[node name="FinalScreenTimer" type="Timer" parent="Step6" index="2"]
+
+process_mode = 1
+wait_time = 1.0
+one_shot = false
+autostart = false
 
 [connection signal="timeout" from="Step1/TextEdit/Timer5" to="Step1/TextEdit" method="_on_Timer5_timeout"]
 
@@ -856,5 +895,11 @@ autostart = false
 [connection signal="timeout" from="Step5/TextEdit/VerifyTimer" to="Step5" method="_on_VerifyTimer_timeout"]
 
 [connection signal="timeout" from="Step5/CorruptionTimer" to="Step5" method="_on_CorruptionTimer_timeout"]
+
+[connection signal="animation_finished" from="Step5/BlackBackAnim" to="Step5" method="_on_BlackBackAnim_animation_finished"]
+
+[connection signal="visibility_changed" from="Step6" to="Step6" method="_on_Step6_visibility_changed"]
+
+[connection signal="timeout" from="Step6/AppearTimer" to="Step6" method="_on_AppearTimer_timeout"]
 
 
