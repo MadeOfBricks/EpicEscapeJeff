@@ -1,4 +1,4 @@
-extends TextEdit
+extends LineEdit
 
 
 func _ready():
