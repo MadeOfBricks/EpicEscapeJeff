@@ -6,6 +6,7 @@ var puzzleStep = 1
 var step2Code
 var step4Password
 var step5Sector
+var stepFinalBlackBoxCode
 onready var screenSize = get_tree().get_root().get_viewport().size
 
 func _ready():
@@ -35,8 +36,9 @@ func _ready():
 	step2Code = file.get_line()
 	step4Password = file.get_line()
 	step5Sector = file.get_line()
+	stepFinalBlackBoxCode = file.get_line()
 	
-	print(step2Code + ", " + step4Password + ", " + step5Sector)
+	print(step2Code + ", " + step4Password + ", " + step5Sector + ", " + stepFinalBlackBoxCode)
 	
 	
 	
@@ -60,3 +62,5 @@ func create_codes():
 	file.store_line("Janet")
 	#Step 5 Sector code
 	file.store_line("64")
+	#Black box code
+	file.store_line("1234")

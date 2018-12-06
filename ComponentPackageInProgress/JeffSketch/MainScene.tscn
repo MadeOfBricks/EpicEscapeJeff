@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=2]
+[gd_scene load_steps=37 format=2]
 
 [ext_resource path="res://Scripts/Root.gd" type="Script" id=1]
 [ext_resource path="res://Scripts/QuitListener.gd" type="Script" id=2]
@@ -26,6 +26,7 @@
 [ext_resource path="res://Scripts/Step5OverlayBlackBackground.gd" type="Script" id=24]
 [ext_resource path="res://Scripts/Step6Manager.gd" type="Script" id=25]
 [ext_resource path="res://Scripts/Step6TextEdit.gd" type="Script" id=26]
+[ext_resource path="res://Scripts/FinalStepManager.gd" type="Script" id=27]
 
 [sub_resource type="Animation" id=1]
 
@@ -249,12 +250,12 @@ script = ExtResource( 1 )
 
 [node name="QuitListener" type="Node2D" parent="." index="0"]
 
-visible = false
 script = ExtResource( 2 )
 
 [node name="Step1" type="Node2D" parent="." index="1"]
 
 editor/display_folded = true
+visible = false
 script = ExtResource( 3 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Step1" index="0"]
@@ -478,7 +479,11 @@ visible_characters = -1
 percent_visible = 1.0
 meta_underlined = true
 tab_size = 4
-text = ""
+text = "WARNING: NETWORK COMPROMISED
+
+ORIGIN: J-4S CELL
+
+ACCESS KEY: 1234(placeholder)"
 scroll_active = true
 scroll_following = false
 selection_enabled = false
@@ -682,8 +687,6 @@ _sections_unfolded = [ "Caret", "Margin", "Rect", "Theme", "custom_fonts" ]
 
 [node name="Step5" type="Node2D" parent="." index="5"]
 
-editor/display_folded = true
-visible = false
 script = ExtResource( 22 )
 
 [node name="Label" type="Label" parent="Step5" index="0"]
@@ -878,8 +881,8 @@ _sections_unfolded = [ "Visibility", "Z Index" ]
 
 [node name="FinalStep" type="Node2D" parent="." index="7"]
 
-editor/display_folded = true
 visible = false
+script = ExtResource( 27 )
 _sections_unfolded = [ "Z Index" ]
 
 [node name="J_E_F_F" type="Label" parent="FinalStep" index="0"]
@@ -913,31 +916,7 @@ texture = ExtResource( 9 )
 script = ExtResource( 10 )
 _sections_unfolded = [ "Z Index" ]
 
-[node name="Label" type="Label" parent="FinalStep" index="2"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 80.0
-margin_top = 310.0
-margin_right = 980.0
-margin_bottom = 408.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
-custom_fonts/font = ExtResource( 19 )
-text = "Attention: All facility systems seem to be down or compromised.
-Enter sector number for access to Skeleton Key"
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-_sections_unfolded = [ "Margin", "Visibility", "custom_fonts" ]
-
-[node name="NotificationLabel" type="Label" parent="FinalStep" index="3"]
+[node name="NotificationLabel" type="Label" parent="FinalStep" index="2"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -954,14 +933,14 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
 custom_fonts/font = ExtResource( 19 )
-text = "Code for Skeleton Key Black Box: 7564"
+text = "Code for Skeleton Key Black Box:"
 autowrap = true
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "Margin", "Visibility", "custom_fonts" ]
 
-[node name="TextEdit" type="LineEdit" parent="FinalStep" index="4"]
+[node name="TextEdit" type="LineEdit" parent="FinalStep" index="3"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -1036,5 +1015,7 @@ _sections_unfolded = [ "Caret", "Theme", "custom_fonts" ]
 [connection signal="timeout" from="Step6/FinalScreenTimer" to="Step6" method="_on_FinalScreenTimer_timeout"]
 
 [connection signal="animation_finished" from="Step6/AnimationPlayer" to="Step6" method="_on_AnimationPlayer_animation_finished"]
+
+[connection signal="visibility_changed" from="FinalStep" to="FinalStep" method="_on_FinalStep_visibility_changed"]
 
 
