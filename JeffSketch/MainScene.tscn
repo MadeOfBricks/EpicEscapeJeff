@@ -1,30 +1,31 @@
-[gd_scene load_steps=35 format=2]
+[gd_scene load_steps=36 format=2]
 
 [ext_resource path="res://Scripts/Root.gd" type="Script" id=1]
-[ext_resource path="res://Scripts/Step1Manager.gd" type="Script" id=2]
-[ext_resource path="res://Assets/SimpleBlackSquare.png" type="Texture" id=3]
-[ext_resource path="res://Scripts/Step1BG.gd" type="Script" id=4]
-[ext_resource path="res://Assets/Step1CommandLineEsque.tres" type="Theme" id=5]
-[ext_resource path="res://Scripts/Step1TextEdit.gd" type="Script" id=6]
-[ext_resource path="res://Scripts/Step2Manager.gd" type="Script" id=7]
-[ext_resource path="res://Assets/SimpleGreenSquare.png" type="Texture" id=8]
-[ext_resource path="res://Scripts/Step2BG.gd" type="Script" id=9]
-[ext_resource path="res://Assets/Fonts/JeffLabelFontStep2.tres" type="DynamicFont" id=10]
-[ext_resource path="res://Assets/Fonts/NetworkWaitFonttStep2.tres" type="DynamicFont" id=11]
-[ext_resource path="res://Scripts/Step2NetWaitLabel.gd" type="Script" id=12]
-[ext_resource path="res://Scripts/Step3Manager.gd" type="Script" id=13]
-[ext_resource path="res://Scripts/Step3CorruptionManagerTimer.gd" type="Script" id=14]
-[ext_resource path="res://Assets/JeffScreenPreCorrupt.png" type="Texture" id=15]
-[ext_resource path="res://Scripts/Step3CorruptionScreen.gd" type="Script" id=16]
-[ext_resource path="res://Scripts/Step4Manager.gd" type="Script" id=17]
-[ext_resource path="res://Assets/Fonts/Step4Password.tres" type="DynamicFont" id=18]
-[ext_resource path="res://Assets/NormalJeffTextEditTheme.tres" type="Theme" id=19]
-[ext_resource path="res://Scripts/Step4TextEdit.gd" type="Script" id=20]
-[ext_resource path="res://Scripts/Step5Manager.gd" type="Script" id=21]
-[ext_resource path="res://Scripts/Step5TextEdit.gd" type="Script" id=22]
-[ext_resource path="res://Scripts/Step5OverlayBlackBackground.gd" type="Script" id=23]
-[ext_resource path="res://Scripts/Step6Manager.gd" type="Script" id=24]
-[ext_resource path="res://Scripts/Step6TextEdit.gd" type="Script" id=25]
+[ext_resource path="res://Scripts/QuitListener.gd" type="Script" id=2]
+[ext_resource path="res://Scripts/Step1Manager.gd" type="Script" id=3]
+[ext_resource path="res://Assets/SimpleBlackSquare.png" type="Texture" id=4]
+[ext_resource path="res://Scripts/Step1BG.gd" type="Script" id=5]
+[ext_resource path="res://Assets/Step1CommandLineEsque.tres" type="Theme" id=6]
+[ext_resource path="res://Scripts/Step1TextEdit.gd" type="Script" id=7]
+[ext_resource path="res://Scripts/Step2Manager.gd" type="Script" id=8]
+[ext_resource path="res://Assets/SimpleGreenSquare.png" type="Texture" id=9]
+[ext_resource path="res://Scripts/Step2BG.gd" type="Script" id=10]
+[ext_resource path="res://Assets/Fonts/JeffLabelFontStep2.tres" type="DynamicFont" id=11]
+[ext_resource path="res://Assets/Fonts/NetworkWaitFonttStep2.tres" type="DynamicFont" id=12]
+[ext_resource path="res://Scripts/Step2NetWaitLabel.gd" type="Script" id=13]
+[ext_resource path="res://Scripts/Step3Manager.gd" type="Script" id=14]
+[ext_resource path="res://Scripts/Step3CorruptionManagerTimer.gd" type="Script" id=15]
+[ext_resource path="res://Assets/JeffScreenPreCorrupt.png" type="Texture" id=16]
+[ext_resource path="res://Scripts/Step3CorruptionScreen.gd" type="Script" id=17]
+[ext_resource path="res://Scripts/Step4Manager.gd" type="Script" id=18]
+[ext_resource path="res://Assets/Fonts/Step4Password.tres" type="DynamicFont" id=19]
+[ext_resource path="res://Assets/NormalJeffTextEditTheme.tres" type="Theme" id=20]
+[ext_resource path="res://Scripts/Step4TextEdit.gd" type="Script" id=21]
+[ext_resource path="res://Scripts/Step5Manager.gd" type="Script" id=22]
+[ext_resource path="res://Scripts/Step5TextEdit.gd" type="Script" id=23]
+[ext_resource path="res://Scripts/Step5OverlayBlackBackground.gd" type="Script" id=24]
+[ext_resource path="res://Scripts/Step6Manager.gd" type="Script" id=25]
+[ext_resource path="res://Scripts/Step6TextEdit.gd" type="Script" id=26]
 
 [sub_resource type="Animation" id=1]
 
@@ -45,16 +46,7 @@ tracks/0/keys = {
 "values": [ Color( 1, 1, 1, 1 ), Color( 0, 0, 0, 0 ) ]
 }
 
-[sub_resource type="SpriteFrames" id=4]
-
-animations = [ {
-"frames": [ ExtResource( 8 ) ],
-"loop": true,
-"name": "default",
-"speed": 5.0
-} ]
-
-[sub_resource type="Animation" id=5]
+[sub_resource type="Animation" id=2]
 
 resource_name = "Fade In"
 length = 1.0
@@ -85,13 +77,13 @@ tracks/1/keys = {
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
 }
 
-[sub_resource type="StyleBoxTexture" id=6]
+[sub_resource type="StyleBoxTexture" id=3]
 
 content_margin_left = -1.0
 content_margin_right = -1.0
 content_margin_top = -1.0
 content_margin_bottom = -1.0
-texture = ExtResource( 3 )
+texture = ExtResource( 4 )
 region_rect = Rect2( 0, 0, 16, 16 )
 margin_left = 0.0
 margin_right = 0.0
@@ -104,9 +96,9 @@ expand_margin_bottom = 0.0
 modulate_color = Color( 1, 1, 1, 1 )
 draw_center = true
 
-[sub_resource type="Theme" id=7]
+[sub_resource type="Theme" id=4]
 
-default_font = ExtResource( 11 )
+default_font = ExtResource( 12 )
 RichTextLabel/colors/default_color = Color( 0.988312, 0.996094, 0, 1 )
 RichTextLabel/colors/font_color_selected = Color( 0.490196, 0.490196, 0.490196, 1 )
 RichTextLabel/colors/selection_color = Color( 0.1, 0.1, 1, 0.8 )
@@ -119,10 +111,10 @@ RichTextLabel/fonts/italics_font = null
 RichTextLabel/fonts/mono_font = null
 RichTextLabel/fonts/normal_font = null
 RichTextLabel/styles/focus = null
-RichTextLabel/styles/normal = SubResource( 6 )
+RichTextLabel/styles/normal = SubResource( 3 )
 _sections_unfolded = [ "Resource", "RichTextLabel", "RichTextLabel/colors", "RichTextLabel/styles" ]
 
-[sub_resource type="Animation" id=8]
+[sub_resource type="Animation" id=5]
 
 resource_name = "Fade"
 length = 1.0
@@ -141,7 +133,7 @@ tracks/0/keys = {
 "values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
 }
 
-[sub_resource type="Animation" id=9]
+[sub_resource type="Animation" id=6]
 
 length = 1.0
 loop = false
@@ -171,7 +163,7 @@ tracks/1/keys = {
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
 }
 
-[sub_resource type="Animation" id=10]
+[sub_resource type="Animation" id=7]
 
 resource_name = "Fade"
 length = 1.0
@@ -202,7 +194,7 @@ tracks/1/keys = {
 "values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
 }
 
-[sub_resource type="Animation" id=11]
+[sub_resource type="Animation" id=8]
 
 resource_name = "Flicker In"
 length = 2.0
@@ -215,20 +207,56 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.5, 0.6, 0.7, 0.8, 1, 1.1, 1.2 ),
+"times": PoolRealArray( 0, 0.5, 0.6, 0.7, 0.8, 1.1, 1.2, 1.3 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
 "update": 1,
 "values": [ false, true, false, true, false, true, false, true ]
+}
+
+[sub_resource type="Animation" id=9]
+
+length = 1.0
+loop = false
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("AnimationPlayer/GreenBackground:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = false
+tracks/0/keys = {
+"times": PoolRealArray(  ),
+"transitions": PoolRealArray(  ),
+"update": 1,
+"values": [  ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("AnimationPlayer/GreenBackground:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
 }
 
 [node name="Root" type="Node" index="0"]
 
 script = ExtResource( 1 )
 
-[node name="Step1" type="Node2D" parent="." index="0"]
+[node name="QuitListener" type="Node2D" parent="." index="0"]
 
 visible = false
 script = ExtResource( 2 )
+
+[node name="Step1" type="Node2D" parent="." index="1"]
+
+editor/display_folded = true
+visible = false
+script = ExtResource( 3 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Step1" index="0"]
 
@@ -244,8 +272,8 @@ blend_times = [  ]
 
 position = Vector2( 510.296, 387.042 )
 z_index = -1
-texture = ExtResource( 3 )
-script = ExtResource( 4 )
+texture = ExtResource( 4 )
+script = ExtResource( 5 )
 _sections_unfolded = [ "Animation", "Material", "Offset", "Region", "Transform", "Visibility", "Z Index" ]
 
 [node name="TextEdit" type="TextEdit" parent="Step1" index="1"]
@@ -265,7 +293,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-theme = ExtResource( 5 )
+theme = ExtResource( 6 )
 text = "Awaiting input 
 "
 readonly = false
@@ -283,7 +311,7 @@ caret_block_mode = true
 caret_blink = true
 caret_blink_speed = 0.65
 caret_moving_by_right_click = true
-script = ExtResource( 6 )
+script = ExtResource( 7 )
 _sections_unfolded = [ "Theme" ]
 
 [node name="Timer5" type="Timer" parent="Step1/TextEdit" index="6"]
@@ -293,18 +321,17 @@ wait_time = 0.1
 one_shot = false
 autostart = true
 
-[node name="Step2" type="Node2D" parent="." index="1"]
+[node name="Step2" type="Node2D" parent="." index="2"]
 
 editor/display_folded = true
 visible = false
-script = ExtResource( 7 )
+script = ExtResource( 8 )
 
-[node name="Background" type="AnimatedSprite" parent="Step2" index="0"]
+[node name="Background" type="Sprite" parent="Step2" index="0"]
 
 z_index = -2
-frames = SubResource( 4 )
-animation = "default"
-script = ExtResource( 9 )
+texture = ExtResource( 9 )
+script = ExtResource( 10 )
 _sections_unfolded = [ "Visibility", "Z Index" ]
 
 [node name="Step2J_E_F_FlTimer" type="Timer" parent="Step2" index="1"]
@@ -321,7 +348,7 @@ autoplay = ""
 playback_process_mode = 1
 playback_default_blend_time = 0.0
 playback_speed = 1.0
-"anims/Fade In" = SubResource( 5 )
+"anims/Fade In" = SubResource( 2 )
 blend_times = [  ]
 _sections_unfolded = [ "Playback Options" ]
 
@@ -341,7 +368,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 10 )
+custom_fonts/font = ExtResource( 11 )
 custom_colors/font_color = Color( 0.561006, 0.652344, 0.55806, 1 )
 text = "J.E.F.F."
 align = 1
@@ -368,12 +395,12 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 11 )
+custom_fonts/font = ExtResource( 12 )
 text = "Waiting for network connection . . ."
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
-script = ExtResource( 12 )
+script = ExtResource( 13 )
 _sections_unfolded = [ "custom_fonts" ]
 
 [node name="Timer" type="Timer" parent="Step2/Step2NetWait" index="0"]
@@ -390,11 +417,11 @@ wait_time = 1.0
 one_shot = false
 autostart = false
 
-[node name="Step3" type="Node2D" parent="." index="2"]
+[node name="Step3" type="Node2D" parent="." index="3"]
 
 editor/display_folded = true
 visible = false
-script = ExtResource( 13 )
+script = ExtResource( 14 )
 
 [node name="Step3FileChecker" type="Timer" parent="Step3" index="0"]
 
@@ -409,14 +436,14 @@ process_mode = 1
 wait_time = 0.3
 one_shot = false
 autostart = false
-script = ExtResource( 14 )
+script = ExtResource( 15 )
 
 [node name="CorruptionScreen" type="Sprite" parent="Step3" index="2"]
 
 position = Vector2( 511.217, 372.621 )
-texture = ExtResource( 15 )
+texture = ExtResource( 16 )
 centered = false
-script = ExtResource( 16 )
+script = ExtResource( 17 )
 _sections_unfolded = [ "Transform", "Z Index" ]
 
 [node name="WarningWindow" type="Node2D" parent="Step3" index="3"]
@@ -441,7 +468,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-theme = SubResource( 7 )
+theme = SubResource( 4 )
 bbcode_enabled = false
 bbcode_text = "WARNING: NETWORK COMPROMISED
 
@@ -470,18 +497,17 @@ wait_time = 0.3
 one_shot = false
 autostart = false
 
-[node name="Step4" type="Node2D" parent="." index="3"]
+[node name="Step4" type="Node2D" parent="." index="4"]
 
 editor/display_folded = true
 visible = false
-script = ExtResource( 17 )
+script = ExtResource( 18 )
 
-[node name="GreenBackground" type="AnimatedSprite" parent="Step4" index="0"]
+[node name="GreenBackground" type="Sprite" parent="Step4" index="0"]
 
 z_index = -2
-frames = SubResource( 4 )
-animation = "default"
-script = ExtResource( 9 )
+texture = ExtResource( 9 )
+script = ExtResource( 10 )
 _sections_unfolded = [ "Visibility", "Z Index" ]
 
 [node name="BackgroundAnimPlayer" type="AnimationPlayer" parent="Step4" index="1"]
@@ -492,7 +518,7 @@ autoplay = ""
 playback_process_mode = 1
 playback_default_blend_time = 0.0
 playback_speed = 1.0
-anims/Fade = SubResource( 8 )
+anims/Fade = SubResource( 5 )
 blend_times = [  ]
 
 [node name="Background" type="Sprite" parent="Step4/BackgroundAnimPlayer" index="0"]
@@ -500,13 +526,12 @@ blend_times = [  ]
 visible = false
 position = Vector2( 510.296, 387.042 )
 z_index = -1
-texture = ExtResource( 3 )
-script = ExtResource( 4 )
+texture = ExtResource( 4 )
+script = ExtResource( 5 )
 _sections_unfolded = [ "Animation", "Material", "Offset", "Region", "Transform", "Visibility", "Z Index" ]
 
 [node name="J_E_F_FlTimer" type="Timer" parent="Step4" index="2"]
 
-editor/display_folded = true
 process_mode = 1
 wait_time = 1.0
 one_shot = true
@@ -514,13 +539,12 @@ autostart = false
 
 [node name="JeffTitlePlayer" type="AnimationPlayer" parent="Step4/J_E_F_FlTimer" index="0"]
 
-editor/display_folded = true
 root_node = NodePath("..")
 autoplay = ""
 playback_process_mode = 1
 playback_default_blend_time = 0.0
 playback_speed = 1.0
-"anims/Fade In" = SubResource( 9 )
+"anims/Fade In" = SubResource( 6 )
 blend_times = [  ]
 _sections_unfolded = [ "Playback Options" ]
 
@@ -540,7 +564,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 10 )
+custom_fonts/font = ExtResource( 11 )
 custom_colors/font_color = Color( 0.561006, 0.652344, 0.55806, 1 )
 text = "J.E.F.F."
 align = 1
@@ -565,7 +589,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 18 )
+custom_fonts/font = ExtResource( 19 )
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
@@ -577,17 +601,17 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 49.0
-margin_top = 416.0
-margin_right = 407.0
-margin_bottom = 519.0
+margin_left = 476.0
+margin_top = 490.0
+margin_right = 834.0
+margin_bottom = 593.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 18 )
+custom_fonts/font = ExtResource( 19 )
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
@@ -600,7 +624,7 @@ autoplay = ""
 playback_process_mode = 1
 playback_default_blend_time = 0.0
 playback_speed = 1.0
-anims/Fade = SubResource( 10 )
+anims/Fade = SubResource( 7 )
 blend_times = [  ]
 
 [node name="LoginBox" type="Node2D" parent="Step4/LoginBoxAPlayer" index="0"]
@@ -626,14 +650,14 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 18 )
+custom_fonts/font = ExtResource( 19 )
 text = "Password:"
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "Margin", "Visibility", "custom_fonts" ]
 
-[node name="TextEdit" type="TextEdit" parent="Step4/LoginBoxAPlayer/LoginBox" index="1"]
+[node name="TextEdit" type="LineEdit" parent="Step4/LoginBoxAPlayer/LoginBox" index="1"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -642,7 +666,7 @@ anchor_bottom = 0.0
 margin_left = 117.0
 margin_top = 42.0
 margin_right = 549.0
-margin_bottom = 199.0
+margin_bottom = 106.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 focus_mode = 2
@@ -650,31 +674,21 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-theme = ExtResource( 19 )
-custom_fonts/font = ExtResource( 18 )
-text = ""
-readonly = false
-highlight_current_line = false
-syntax_highlighting = false
-show_line_numbers = false
-highlight_all_occurrences = false
-override_selected_font_color = false
+theme = ExtResource( 20 )
+custom_fonts/font = ExtResource( 19 )
+focus_mode = 2
 context_menu_enabled = false
-smooth_scrolling = false
-v_scroll_speed = 80.0
-hiding_enabled = 0
-wrap_lines = false
-caret_block_mode = true
+placeholder_alpha = 0.6
 caret_blink = true
 caret_blink_speed = 0.65
-caret_moving_by_right_click = false
-script = ExtResource( 20 )
-_sections_unfolded = [ "Caret", "Margin", "Theme", "custom_fonts" ]
+caret_position = 0
+script = ExtResource( 21 )
+_sections_unfolded = [ "Caret", "Margin", "Rect", "Theme", "custom_fonts" ]
 
-[node name="Step5" type="Node2D" parent="." index="4"]
+[node name="Step5" type="Node2D" parent="." index="5"]
 
 editor/display_folded = true
-script = ExtResource( 21 )
+script = ExtResource( 22 )
 
 [node name="Label" type="Label" parent="Step5" index="0"]
 
@@ -692,7 +706,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 18 )
+custom_fonts/font = ExtResource( 19 )
 text = "Attention: All facility systems seem to be down or compromised.
 Enter sector number for access to Skeleton Key"
 percent_visible = 1.0
@@ -716,14 +730,14 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 18 )
+custom_fonts/font = ExtResource( 19 )
 autowrap = true
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "Margin", "Visibility", "custom_fonts" ]
 
-[node name="TextEdit" type="TextEdit" parent="Step5" index="2"]
+[node name="TextEdit" type="LineEdit" parent="Step5" index="2"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -740,40 +754,29 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-theme = ExtResource( 19 )
-custom_fonts/font = ExtResource( 18 )
-text = ""
-readonly = false
-highlight_current_line = false
-syntax_highlighting = false
-show_line_numbers = false
-highlight_all_occurrences = false
-override_selected_font_color = false
+theme = ExtResource( 20 )
+custom_fonts/font = ExtResource( 19 )
+focus_mode = 2
 context_menu_enabled = true
-smooth_scrolling = false
-v_scroll_speed = 80.0
-hiding_enabled = 0
-wrap_lines = false
-caret_block_mode = true
+placeholder_alpha = 0.6
 caret_blink = true
 caret_blink_speed = 0.65
-caret_moving_by_right_click = true
-script = ExtResource( 22 )
+caret_position = 0
+script = ExtResource( 23 )
 _sections_unfolded = [ "Caret", "Theme", "custom_fonts" ]
 
-[node name="VerifyTimer" type="Timer" parent="Step5/TextEdit" index="6"]
+[node name="VerifyTimer" type="Timer" parent="Step5/TextEdit" index="2"]
 
 process_mode = 1
 wait_time = 3.0
 one_shot = true
 autostart = false
 
-[node name="GreenBackground" type="AnimatedSprite" parent="Step5" index="3"]
+[node name="GreenBackground" type="Sprite" parent="Step5" index="3"]
 
 z_index = -2
-frames = SubResource( 4 )
-animation = "default"
-script = ExtResource( 9 )
+texture = ExtResource( 9 )
+script = ExtResource( 10 )
 _sections_unfolded = [ "Visibility", "Z Index" ]
 
 [node name="CorruptionTimer" type="Timer" parent="Step5" index="4"]
@@ -790,21 +793,22 @@ autoplay = ""
 playback_process_mode = 1
 playback_default_blend_time = 0.0
 playback_speed = 1.0
-"anims/Flicker In" = SubResource( 11 )
+"anims/Flicker In" = SubResource( 8 )
 blend_times = [  ]
 
 [node name="BlackBack" type="Sprite" parent="Step5/BlackBackAnim" index="0"]
 
 visible = false
 z_index = 2
-texture = ExtResource( 3 )
-script = ExtResource( 23 )
+texture = ExtResource( 4 )
+script = ExtResource( 24 )
 _sections_unfolded = [ "Visibility", "Z Index" ]
 
-[node name="Step6" type="Node2D" parent="." index="5"]
+[node name="Step6" type="Node2D" parent="." index="6"]
 
 visible = false
-script = ExtResource( 24 )
+script = ExtResource( 25 )
+_sections_unfolded = [ "Z Index" ]
 
 [node name="AppearTimer" type="Timer" parent="Step6" index="0"]
 
@@ -815,15 +819,14 @@ autostart = false
 
 [node name="TextEdit" type="TextEdit" parent="Step6" index="1"]
 
-visible = false
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_left = 313.0
 margin_top = 230.0
-margin_right = 665.0
-margin_bottom = 384.0
+margin_right = 898.0
+margin_bottom = 526.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 focus_mode = 2
@@ -831,7 +834,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-theme = ExtResource( 5 )
+theme = ExtResource( 6 )
 text = "X:/"
 readonly = false
 highlight_current_line = false
@@ -848,15 +851,145 @@ caret_block_mode = true
 caret_blink = true
 caret_blink_speed = 0.65
 caret_moving_by_right_click = true
-script = ExtResource( 25 )
+script = ExtResource( 26 )
 _sections_unfolded = [ "Caret", "Theme" ]
 
 [node name="FinalScreenTimer" type="Timer" parent="Step6" index="2"]
 
 process_mode = 1
-wait_time = 1.0
-one_shot = false
+wait_time = 2.0
+one_shot = true
 autostart = false
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Step6" index="3"]
+
+root_node = NodePath("..")
+autoplay = ""
+playback_process_mode = 1
+playback_default_blend_time = 0.0
+playback_speed = 1.0
+"anims/Flicker In" = SubResource( 9 )
+blend_times = [  ]
+
+[node name="GreenBackground" type="Sprite" parent="Step6/AnimationPlayer" index="0"]
+
+modulate = Color( 1, 1, 1, 0 )
+z_index = 1
+texture = ExtResource( 9 )
+script = ExtResource( 10 )
+_sections_unfolded = [ "Visibility", "Z Index" ]
+
+[node name="FinalStep" type="Node2D" parent="." index="7"]
+
+visible = false
+_sections_unfolded = [ "Z Index" ]
+
+[node name="J_E_F_F" type="Label" parent="FinalStep" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 223.0
+margin_right = 806.0
+margin_bottom = 379.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 11 )
+custom_colors/font_color = Color( 0.561006, 0.652344, 0.55806, 1 )
+text = "J.E.F.F."
+align = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Anchor", "Margin", "Rect", "Visibility", "custom_fonts", "custom_styles" ]
+
+[node name="GreeBackground" type="Sprite" parent="FinalStep" index="1"]
+
+z_index = -1
+texture = ExtResource( 9 )
+script = ExtResource( 10 )
+_sections_unfolded = [ "Z Index" ]
+
+[node name="Label" type="Label" parent="FinalStep" index="2"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 80.0
+margin_top = 310.0
+margin_right = 980.0
+margin_bottom = 408.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 19 )
+text = "Attention: All facility systems seem to be down or compromised.
+Enter sector number for access to Skeleton Key"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Margin", "Visibility", "custom_fonts" ]
+
+[node name="NotificationLabel" type="Label" parent="FinalStep" index="3"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 324.0
+margin_top = 440.0
+margin_right = 1039.0
+margin_bottom = 745.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 19 )
+text = "Code for Skeleton Key Black Box: 7564"
+autowrap = true
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Margin", "Visibility", "custom_fonts" ]
+
+[node name="TextEdit" type="LineEdit" parent="FinalStep" index="4"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 80.0
+margin_top = 420.0
+margin_right = 310.0
+margin_bottom = 570.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+theme = ExtResource( 20 )
+custom_fonts/font = ExtResource( 19 )
+editable = false
+focus_mode = 2
+context_menu_enabled = true
+placeholder_alpha = 0.6
+caret_blink = true
+caret_blink_speed = 0.65
+caret_position = 0
+_sections_unfolded = [ "Caret", "Theme", "custom_fonts" ]
 
 [connection signal="timeout" from="Step1/TextEdit/Timer5" to="Step1/TextEdit" method="_on_Timer5_timeout"]
 
@@ -901,5 +1034,9 @@ autostart = false
 [connection signal="visibility_changed" from="Step6" to="Step6" method="_on_Step6_visibility_changed"]
 
 [connection signal="timeout" from="Step6/AppearTimer" to="Step6" method="_on_AppearTimer_timeout"]
+
+[connection signal="timeout" from="Step6/FinalScreenTimer" to="Step6" method="_on_FinalScreenTimer_timeout"]
+
+[connection signal="animation_finished" from="Step6/AnimationPlayer" to="Step6" method="_on_AnimationPlayer_animation_finished"]
 
 

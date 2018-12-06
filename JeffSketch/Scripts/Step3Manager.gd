@@ -1,6 +1,10 @@
 extends Node2D
 
 onready var crptSprite = preload("res://CorruptionSprite.tscn")
+var crptText = preload("res://Packed/Step3Corruptor.tscn")
+
+var corruptTexts = [null,null,null,null]
+var corruptTextsCreated = false
 
 const SPRITE_COUNT = 8
 
@@ -41,9 +45,18 @@ func _on_server_pulled():
 	
 
 func _on_Step3_visibility_changed():
-	$Step3FileChecker.start()
-	$CorruptionScreen.visible = true
-	$CorruptionSpriteTimer.start()
+	if visible:
+		$Step3FileChecker.start()
+		$CorruptionScreen.visible = true
+		$CorruptionSpriteTimer.start()
+		if !corruptTextsCreated:
+			corruptTextsCreated = true
+			for i in range(4):
+				corruptTexts[i] = crptText.instance()
+				var randX = rand_range(20,screenSize.x)
+				var randY = rand_range(20,screenSize.y)
+				corruptTexts[i].position = Vector2(randX,randY)
+				add_child(corruptTexts[i])
 
 func _on_CorruptionSpriteTimer_timeout():
 	if spritesLeft > 0:
@@ -72,7 +85,13 @@ func _on_RebootTimer_timeout():
 		var thisSprite = corruptionSprites.front()
 		corruptionSprites.pop_front()
 		thisSprite.queue_free()
+		
+		for i in range(4):
+			corruptTexts[i].get_node("Label").text = "NO"
+		
 	else:
+		for i in range(4):
+			corruptTexts[i].visible = false
 		visible = false
 		get_parent().get_node("Step4").visible = true
 		$RebootTimer.stop()

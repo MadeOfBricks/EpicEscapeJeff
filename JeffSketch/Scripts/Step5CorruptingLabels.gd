@@ -1,14 +1,14 @@
 extends Label
 
 
-var charArray = ['J','6',' ','#','X','A','0','1']
+var charArray = ['J','6',' ','RECLAIM','X','MINE','0','1']
 
 func _ready():
 	pass
 
 
 func _on_Timer_timeout():
-	if $Timer.wait_time/2 > 0:
+	if $Timer.wait_time/2 > 0.01:
 		$Timer.wait_time /= 2
 	var randInt
 	var randChars = ""

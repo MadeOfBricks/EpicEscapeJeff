@@ -2,6 +2,8 @@ extends Node2D
 
 onready var step3 = get_parent().get_node("Step3")
 
+
+
 func _ready():
 	connect("lever_pulled",self,"_on_lever_pulled")
 
@@ -28,16 +30,12 @@ func sensor_file_read():
 	var fileString = OS.get_system_dir(OS.SYSTEM_DIR_DOCUMENTS) + "/testFile.txt"
 	readFile.open(fileString,File.READ)
 	var levState = readFile.get_line()
-	print("Lever state: " + levState)
 	
-	#var lBreak = readFile.get_line()
 	
 	var servState = readFile.get_line()
-	#print("Server state: " + servState)
 	
 	if levState != "X":
 		emit_signal("lever_pulled")
-		#print("lever_pulled")
 
 func _on_Step2FileChecker_timeout():
 	sensor_file_read()

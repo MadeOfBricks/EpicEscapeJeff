@@ -1,6 +1,6 @@
 extends Node
 
-
+var remainingCorruption = null
 
 var puzzleStep = 1
 onready var screenSize = get_tree().get_root().get_viewport().size

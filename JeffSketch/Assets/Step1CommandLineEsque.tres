@@ -3,7 +3,7 @@
 [ext_resource path="res://Assets/SimpleBlackSquare.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Fonts/ConsoleFont1.tres" type="DynamicFont" id=2]
 
-[sub_resource type="StyleBoxTexture" id=2]
+[sub_resource type="StyleBoxTexture" id=1]
 
 content_margin_left = -1.0
 content_margin_right = -1.0
@@ -23,7 +23,7 @@ expand_margin_bottom = 0.0
 modulate_color = Color( 1, 1, 1, 1 )
 draw_center = true
 
-[sub_resource type="StyleBoxTexture" id=3]
+[sub_resource type="StyleBoxTexture" id=2]
 
 content_margin_left = -1.0
 content_margin_right = -1.0
@@ -75,7 +75,7 @@ TextEdit/fonts/font = null
 TextEdit/icons/tab = null
 TextEdit/styles/completion = null
 TextEdit/styles/focus = null
-TextEdit/styles/normal = SubResource( 2 )
-TextEdit/styles/read_only = SubResource( 3 )
+TextEdit/styles/normal = SubResource( 1 )
+TextEdit/styles/read_only = SubResource( 2 )
 _sections_unfolded = [ "TextEdit", "TextEdit/colors", "TextEdit/fonts", "TextEdit/styles" ]
 

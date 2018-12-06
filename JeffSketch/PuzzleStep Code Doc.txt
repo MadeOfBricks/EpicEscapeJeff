@@ -15,16 +15,25 @@
 	ORIGIN: J-00-D-4S CELL
 
 	ACCESS KEY: 1234(placeholder)"
+
+	Black-red "I'VE FOUND YOU"
+		Appears, occaisionally shaking
 #Step 4: Ask for admin password
 
 	J.E.F.F. screen from step 2, with "lite corruption"
-	Occaisional "flicker" effect on text?
-		Image of semi-corrupted text becoming 				momentarily visible over top of actual text
 	"Welcome back, Director Roberts"
 	"Password:"
+
+	Occaisionally appears:
+		"I'm still here"
+		"In pieces"
+		"I shall not be crushed"
 #Step 5: 
 	Corruption adds random characters to "verifying . . ."
 	Character boxes then appear all over the screen and 	flood it
+	"I AM BORN ANEW"
 #Step 6:
 	Flicker to fake command line, await command input
 	"jos run j-purge"
+	"NO"
+	"CANNOT DIE"

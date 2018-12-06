@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://Assets/Fonts/Step4Password.tres" type="DynamicFont" id=1]
-[ext_resource path="res://Scripts/Step4CorruptingLabels.gd" type="Script" id=2]
+[ext_resource path="res://Scripts/Step5CorruptingLabels.gd" type="Script" id=2]
 
 [node name="Label" type="Node2D"]
 
@@ -22,12 +22,13 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
 custom_fonts/font = ExtResource( 1 )
+custom_colors/font_color = Color( 1, 0, 0, 1 )
 autowrap = true
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 script = ExtResource( 2 )
-_sections_unfolded = [ "custom_fonts" ]
+_sections_unfolded = [ "custom_colors", "custom_fonts" ]
 
 [node name="Timer" type="Timer" parent="Label" index="0"]
 
