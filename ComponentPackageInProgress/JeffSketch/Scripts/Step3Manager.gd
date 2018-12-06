@@ -1,5 +1,7 @@
 extends Node2D
 
+onready var root = get_parent()
+
 onready var crptSprite = preload("res://CorruptionSprite.tscn")
 var crptText = preload("res://Packed/Step3Corruptor.tscn")
 
@@ -57,6 +59,9 @@ func _on_Step3_visibility_changed():
 				var randY = rand_range(20,screenSize.y)
 				corruptTexts[i].position = Vector2(randX,randY)
 				add_child(corruptTexts[i])
+		
+		var warningStr = "WARNING: NETWORK COMPROMISED\nORIGIN: J-4S CELL\nACCESS KEY: "
+		$WarningWindow/RichTextLabel.text = warningStr + root.step2Code
 
 func _on_CorruptionSpriteTimer_timeout():
 	if spritesLeft > 0:

@@ -24,7 +24,7 @@ func _unhandled_input(event):
 
 
 func _on_VerifyTimer_timeout():
-	if checkString == "12345":
+	if checkString == root.step5Sector:
 		$NotificationLabel.text = "Sector verified. Prepare for code delivery. . ."
 		$TextEdit.editable = false
 		$CorruptionTimer.start()

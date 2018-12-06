@@ -32,7 +32,7 @@ func _on_JeffTitlePlayer_animation_finished(anim_name):
 func _unhandled_input(event):
 	if visible:
 		if event.is_action("EnterKey"):
-			if $LoginBoxAPlayer/LoginBox/TextEdit.text == "Janet":
+			if $LoginBoxAPlayer/LoginBox/TextEdit.text == root.step4Password:
 				$LoginBoxAPlayer/LoginBox/TextEdit.text = ""
 				$LoginBoxAPlayer/LoginBox/TextEdit.editable = false
 				$NotificationLabel.text = "Welcome back\nDirector Roberts"

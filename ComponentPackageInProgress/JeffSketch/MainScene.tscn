@@ -478,11 +478,7 @@ visible_characters = -1
 percent_visible = 1.0
 meta_underlined = true
 tab_size = 4
-text = "WARNING: NETWORK COMPROMISED
-
-ORIGIN: J-4S CELL
-
-ACCESS KEY: 1234(placeholder)"
+text = ""
 scroll_active = true
 scroll_following = false
 selection_enabled = false
@@ -806,6 +802,7 @@ _sections_unfolded = [ "Visibility", "Z Index" ]
 
 [node name="Step6" type="Node2D" parent="." index="6"]
 
+editor/display_folded = true
 visible = false
 script = ExtResource( 25 )
 _sections_unfolded = [ "Z Index" ]
@@ -881,6 +878,7 @@ _sections_unfolded = [ "Visibility", "Z Index" ]
 
 [node name="FinalStep" type="Node2D" parent="." index="7"]
 
+editor/display_folded = true
 visible = false
 _sections_unfolded = [ "Z Index" ]
 
