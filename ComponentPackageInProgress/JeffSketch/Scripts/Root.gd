@@ -57,10 +57,10 @@ func create_codes():
 	var fileString = OS.get_system_dir(OS.SYSTEM_DIR_DOCUMENTS) + "/JeffCodes.txt"
 	file.open(fileString,File.WRITE)
 	#Step 2 JUDAS cell key
-	file.store_line("RGBG")
+	file.store_string("RGBG\n")
 	#Step 4 Admin password
-	file.store_line("Janet")
+	file.store_string("Janet\n")
 	#Step 5 Sector code
-	file.store_line("64")
+	file.store_string("64\n")
 	#Black box code
-	file.store_line("1234")
+	file.store_string("1234\n")

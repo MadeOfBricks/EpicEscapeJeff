@@ -686,6 +686,7 @@ _sections_unfolded = [ "Caret", "Margin", "Rect", "Theme", "custom_fonts" ]
 
 [node name="Step5" type="Node2D" parent="." index="5"]
 
+editor/display_folded = true
 visible = false
 script = ExtResource( 22 )
 
@@ -881,6 +882,7 @@ _sections_unfolded = [ "Visibility", "Z Index" ]
 
 [node name="FinalStep" type="Node2D" parent="." index="7"]
 
+editor/display_folded = true
 visible = false
 script = ExtResource( 27 )
 _sections_unfolded = [ "Z Index" ]
